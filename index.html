@@ -3,81 +3,111 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Khanh Duy Tran — Academic Portfolio</title>
-  <meta name="description" content="Academic portfolio of Khanh Duy Tran — MEng student and research assistant specializing in edge AI, biomedical signal processing, and embedded healthcare systems.">
+  <title>Khanh Duy Tran — Research Portfolio</title>
+  <meta name="description" content="Research portfolio of Khanh Duy Tran — M.Eng. student and Research Assistant working on edge-enabled AI, wearable biomedical systems, physiological signal processing, and reliability-aware clinical AI.">
+
   <style>
-    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
     :root {
-      --navy:  #1a2744;
-      --teal:  #0f766e;
+      --navy: #1a2744;
+      --blue: #2e4a8e;
+      --teal: #0f766e;
       --light: #f8fafc;
       --muted: #64748b;
       --border: #e2e8f0;
     }
 
-    html { scroll-behavior: smooth; }
+    html {
+      scroll-behavior: smooth;
+    }
 
     body {
-      font-family: Georgia, 'Times New Roman', serif;
+      font-family: Georgia, "Times New Roman", serif;
       font-size: 16px;
       line-height: 1.75;
       color: #1e293b;
       background: #fff;
     }
 
-    /* ── Nav ── */
+    /* ─────────────────────────────
+       Top bar
+    ───────────────────────────── */
     nav {
-      position: sticky; top: 0; z-index: 100;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      height: 58px;
+      display: flex;
+      align-items: center;
+      padding: 0 2rem;
       background: var(--navy);
-      display: flex; align-items: center; justify-content: space-between;
-      padding: 0 2rem; height: 58px;
-      box-shadow: 0 2px 10px rgba(0,0,0,.25);
+      box-shadow: 0 2px 10px rgba(0, 0, 0, .25);
     }
-    .nav-brand { color: #fff; font-family: Arial, sans-serif; font-size: .9rem; font-weight: 700; letter-spacing: .4px; }
-    .nav-links  { display: flex; gap: 2rem; list-style: none; }
-    .nav-links a {
-      color: rgba(255,255,255,.78);
-      text-decoration: none;
-      font-family: Arial, sans-serif;
-      font-size: .82rem;
-      letter-spacing: .5px;
-      text-transform: uppercase;
-      transition: color .18s;
-    }
-    .nav-links a:hover { color: #fff; }
 
-    /* ── Layout ── */
-    section { padding: 5rem 0; }
-    section:nth-of-type(even) { background: var(--light); }
-    .container { max-width: 860px; margin: 0 auto; padding: 0 2rem; }
+    .nav-brand {
+      color: #fff;
+      font-family: Arial, sans-serif;
+      font-size: .9rem;
+      font-weight: 700;
+      letter-spacing: .4px;
+    }
+
+    /* ─────────────────────────────
+       Shared layout
+    ───────────────────────────── */
+    section {
+      padding: 5rem 0;
+    }
+
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      padding: 0 2rem;
+    }
 
     h2 {
-      font-size: 1.65rem;
-      color: var(--navy);
       margin-bottom: 2rem;
       padding-bottom: .65rem;
+      color: var(--navy);
       border-bottom: 2px solid var(--teal);
+      font-size: 1.65rem;
     }
 
-    /* ── Hero / About ── */
+    /* ─────────────────────────────
+       Hero / About
+    ───────────────────────────── */
     #about {
-      background: linear-gradient(135deg, #1a2744 0%, #2e4a8e 100%);
+      min-height: calc(100vh - 58px);
+      display: flex;
+      align-items: center;
       color: #fff;
+      background: linear-gradient(135deg, var(--navy) 0%, var(--blue) 100%);
     }
-    .about-inner { display: flex; gap: 2.75rem; align-items: flex-start; }
+
+    .about-inner {
+      display: flex;
+      gap: 2.75rem;
+      align-items: flex-start;
+    }
 
     .avatar-wrap {
-      width: 150px;
+      width: 170px;
       flex-shrink: 0;
       text-align: center;
     }
+
     .avatar {
       width: 170px;
       height: 210px;
       overflow: hidden;
       border-radius: 14px;
       position: relative;
+      background: rgba(255,255,255,.05);
     }
 
     .avatar img {
@@ -85,17 +115,18 @@
       height: 100%;
       object-fit: cover;
       object-position: center 100%;
-
-      transform: scale(1.5) translateY(5px);;
+      transform: scale(1.5) translateY(5px);
       transform-origin: center top;
-
       display: block;
     }
+
     .avatar-watermark {
       position: absolute;
-      left: 0; right: 0; bottom: 10px;
+      left: 0;
+      right: 0;
+      bottom: 10px;
       padding: .18rem .3rem;
-      background: rgba(15,23,42,.52);
+      background: rgba(15, 23, 42, .52);
       color: rgba(255,255,255,.9);
       font-family: Arial, sans-serif;
       font-size: .56rem;
@@ -104,6 +135,7 @@
       text-transform: uppercase;
       pointer-events: none;
     }
+
     .avatar-note {
       margin-top: .55rem;
       color: rgba(255,255,255,.58);
@@ -111,12 +143,41 @@
       letter-spacing: .2px;
     }
 
+    .about-text {
+      flex: 1;
+      min-width: 0;
+    }
+
+    .name-row {
+      display: flex;
+      align-items: center;
+      gap: .8rem;
+      flex-wrap: wrap;
+      margin-bottom: .5rem;
+    }
+
+    .about-text h1 {
+      margin: 0;
+      font-size: 2.1rem;
+      line-height: 1.15;
+    }
+
+    .about-text p {
+      margin-bottom: .85rem;
+      color: rgba(255,255,255,.9);
+      font-size: .95rem;
+    }
+
+    .about-text strong {
+      color: #fff;
+    }
+
+    /* CV button beside name */
+    .cv-btn,
     .personal-letter-btn {
       display: inline-flex;
       align-items: center;
       gap: .45rem;
-      margin-top: .35rem;
-      padding: .55rem .85rem;
       border: 1px solid rgba(255,255,255,.38);
       border-radius: 7px;
       background: rgba(255,255,255,.08);
@@ -128,14 +189,188 @@
       cursor: pointer;
       transition: background .18s, border-color .18s, transform .18s;
     }
+
+    .cv-btn {
+      padding: .48rem .72rem;
+    }
+
+    .personal-letter-btn {
+      margin-top: .35rem;
+      padding: .55rem .85rem;
+    }
+
+    .cv-btn:hover,
     .personal-letter-btn:hover {
       background: rgba(255,255,255,.15);
       border-color: rgba(255,255,255,.65);
       transform: translateY(-1px);
     }
 
-    /* ── Personal letter modal ── */
-    .letter-modal {
+    .button-icon,
+    .contact-icon {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+    }
+
+    .button-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    /* Contact chips under name */
+    .hero-contact {
+      display: flex;
+      flex-wrap: wrap;
+      gap: .55rem;
+      margin: .7rem 0 1.05rem;
+    }
+
+    .hero-contact a {
+      display: inline-flex;
+      align-items: center;
+      gap: .42rem;
+      padding: .40rem .68rem;
+      border: 1px solid rgba(255,255,255,.22);
+      border-radius: 999px;
+      background: rgba(255,255,255,.06);
+      color: rgba(255,255,255,.94);
+      text-decoration: none;
+      font: .76rem/1.2 Arial, sans-serif;
+      white-space: nowrap;
+      transition: background .18s, border-color .18s, transform .18s;
+    }
+
+    .hero-contact a:hover {
+      background: rgba(255,255,255,.14);
+      border-color: rgba(255,255,255,.44);
+      transform: translateY(-1px);
+    }
+
+    .contact-icon svg {
+      width: 14px;
+      height: 14px;
+      fill: currentColor;
+    }
+
+    .contact-label {
+      color: rgba(255,255,255,.58);
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+      font-size: .65rem;
+    }
+
+    /* ─────────────────────────────
+       Publications
+    ───────────────────────────── */
+    #publications {
+      background: var(--light);
+    }
+
+    #pub-list {
+      display: flex;
+      flex-direction: column;
+      gap: .85rem;
+    }
+
+    .pub-item {
+      padding: 1.1rem 1.4rem;
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      transition: box-shadow .2s, transform .2s;
+    }
+
+    .pub-item:hover {
+      box-shadow: 0 4px 14px rgba(0,0,0,.08);
+      transform: translateY(-1px);
+    }
+
+    .pub-meta {
+      display: flex;
+      align-items: center;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-bottom: .3rem;
+    }
+
+    .pub-year {
+      color: var(--teal);
+      font: 700 .72rem/1.2 Arial, sans-serif;
+      text-transform: uppercase;
+      letter-spacing: .5px;
+    }
+
+    .pub-type {
+      padding: .1rem .45rem;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      background: var(--light);
+      color: var(--muted);
+      font: .7rem/1.3 Arial, sans-serif;
+    }
+
+    .pub-title {
+      margin-bottom: .25rem;
+      font-size: .97rem;
+      font-weight: bold;
+      line-height: 1.4;
+    }
+
+    .pub-authors {
+      margin-bottom: .2rem;
+      color: #334155;
+      font-size: .86rem;
+    }
+
+    .pub-authors strong {
+      color: var(--navy);
+      font-weight: 700;
+    }
+
+    .pub-venue {
+      color: var(--muted);
+      font: italic .85rem/1.5 Arial, sans-serif;
+    }
+
+    .pub-links {
+      display: flex;
+      gap: .6rem;
+      flex-wrap: wrap;
+      margin-top: .6rem;
+    }
+
+    .pub-link {
+      padding: .18rem .6rem;
+      border: 1px solid var(--teal);
+      border-radius: 4px;
+      color: var(--teal);
+      text-decoration: none;
+      font: .75rem/1.4 Arial, sans-serif;
+      transition: all .18s;
+    }
+
+    .pub-link:hover {
+      background: var(--teal);
+      color: #fff;
+    }
+
+    .status-msg {
+      color: var(--muted);
+      font: italic .875rem/1.5 Arial, sans-serif;
+    }
+
+    .status-msg a {
+      color: var(--teal);
+    }
+
+    /* ─────────────────────────────
+       PDF modals
+    ───────────────────────────── */
+    .pdf-modal {
       position: fixed;
       inset: 0;
       z-index: 1000;
@@ -146,18 +381,23 @@
       background: rgba(15,23,42,.78);
       backdrop-filter: blur(6px);
     }
-    .letter-modal.is-open { display: flex; }
-    .letter-dialog {
+
+    .pdf-modal.is-open {
+      display: flex;
+    }
+
+    .pdf-dialog {
       width: min(920px, 96vw);
       height: min(88vh, 820px);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
       background: #fff;
       border-radius: 14px;
       box-shadow: 0 24px 70px rgba(0,0,0,.35);
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
     }
-    .letter-header {
+
+    .pdf-header {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -166,25 +406,30 @@
       border-bottom: 1px solid var(--border);
       background: var(--light);
     }
-    .letter-eyebrow {
+
+    .pdf-eyebrow {
+      margin-bottom: .35rem;
       color: var(--teal);
       font: 700 .68rem/1 Arial, sans-serif;
       text-transform: uppercase;
       letter-spacing: 1px;
-      margin-bottom: .35rem;
     }
-    .letter-title {
+
+    .pdf-title {
       color: var(--navy);
       font-size: 1.05rem;
       line-height: 1.3;
     }
-    .letter-subtitle {
+
+    .pdf-subtitle {
       margin-top: .2rem;
       color: var(--muted);
       font: .78rem/1.4 Arial, sans-serif;
     }
-    .letter-close {
-      width: 34px; height: 34px;
+
+    .pdf-close {
+      width: 34px;
+      height: 34px;
       flex-shrink: 0;
       border: 1px solid var(--border);
       border-radius: 50%;
@@ -193,706 +438,489 @@
       font-size: 1.2rem;
       cursor: pointer;
     }
-    .letter-frame {
+
+    .pdf-frame {
       width: 100%;
       flex: 1;
       border: 0;
       background: #f1f5f9;
     }
-    .letter-fallback {
+
+    .pdf-fallback {
       padding: .7rem 1rem;
       border-top: 1px solid var(--border);
       color: var(--muted);
+      text-align: center;
       font: .75rem/1.4 Arial, sans-serif;
-      text-align: center;
-    }
-    .letter-fallback a { color: var(--teal); }
-
-    .about-text h1 { font-size: 2.1rem; margin-bottom: .2rem; }
-    .about-text p { color: rgba(255,255,255,.88); font-size: .95rem; margin-bottom: .85rem; }
-    .about-text strong { color: #fff; }
-
-
-    /* ── Timeline ── */
-    .tl-group { margin-bottom: 2.5rem; }
-    .tl-group:last-child { margin-bottom: 0; }
-
-    .section-label {
-      font-family: Arial, sans-serif;
-      font-size: .75rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 1px;
-      color: var(--teal);
-      margin-bottom: 1.25rem;
     }
 
-    .timeline { position: relative; padding-left: 1.5rem; }
-    .timeline::before {
-      content: '';
-      position: absolute; left: 0; top: .5rem; bottom: 0;
-      width: 2px; background: var(--border);
-    }
-
-    .tl-item { position: relative; padding-left: 1.25rem; margin-bottom: 1.75rem; }
-    .tl-item:last-child { margin-bottom: 0; }
-    .tl-item::before {
-      content: '';
-      position: absolute;
-      left: -1.5rem; top: .45rem;
-      width: 10px; height: 10px;
-      border-radius: 50%;
-      background: var(--teal);
-      border: 2px solid #fff;
-      box-shadow: 0 0 0 2px var(--teal);
-    }
-
-    .tl-date  { font-size: .76rem; font-family: Arial, sans-serif; font-weight: 700; color: var(--teal); text-transform: uppercase; letter-spacing: .4px; }
-    .tl-title { font-size: 1rem; font-weight: bold; color: var(--navy); margin: .2rem 0 .15rem; line-height: 1.4; }
-    .tl-place { font-size: .875rem; color: var(--muted); font-family: Arial, sans-serif; }
-    .tl-desc  { font-size: .875rem; color: #475569; margin-top: .4rem; }
-    .tl-desc em { font-style: italic; }
-    .tl-points {
-      font-size: .875rem;
-      color: #475569;
-      margin-top: .45rem;
-      padding-left: 1.15rem;
-    }
-    .tl-points li { margin-bottom: .3rem; }
-    .tl-points li:last-child { margin-bottom: 0; }
-
-    /* ── Publications ── */
-    #pub-list { display: flex; flex-direction: column; gap: .85rem; }
-
-    .pub-item {
-      background: #fff;
-      border: 1px solid var(--border);
-      border-radius: 8px;
-      padding: 1.1rem 1.4rem;
-      transition: box-shadow .2s;
-    }
-    .pub-item:hover { box-shadow: 0 4px 14px rgba(0,0,0,.08); }
-
-    .pub-meta {
-      display: flex; align-items: center; gap: .6rem;
-      margin-bottom: .3rem;
-    }
-    .pub-year {
-      font-size: .72rem; font-family: Arial, sans-serif;
-      font-weight: 700; text-transform: uppercase; letter-spacing: .5px;
+    .pdf-fallback a {
       color: var(--teal);
     }
-    .pub-type {
-      font-size: .7rem; font-family: Arial, sans-serif;
-      color: var(--muted);
-      background: var(--light);
-      border: 1px solid var(--border);
-      padding: .1rem .45rem;
-      border-radius: 4px;
-    }
-    .pub-title { font-size: .97rem; font-weight: bold; line-height: 1.4; margin-bottom: .25rem; }
-    .pub-authors { font-size: .86rem; color: #334155; margin-bottom: .2rem; }
-    .pub-authors strong { color: var(--navy); font-weight: 700; }
-    .pub-venue { font-size: .85rem; color: var(--muted); font-family: Arial, sans-serif; font-style: italic; }
-    .pub-links { display: flex; gap: .6rem; margin-top: .6rem; flex-wrap: wrap; }
-    .pub-link {
-      font-size: .75rem; font-family: Arial, sans-serif;
-      color: var(--teal); border: 1px solid var(--teal);
-      padding: .18rem .6rem; border-radius: 4px;
-      text-decoration: none; transition: all .18s;
-    }
-    .pub-link:hover { background: var(--teal); color: #fff; }
 
-    .pub-source {
-      font-size: .8rem; color: var(--muted); font-family: Arial, sans-serif;
-      margin-bottom: 1.5rem;
-    }
-    .pub-source a { color: var(--teal); text-decoration: none; }
-    .pub-source a:hover { text-decoration: underline; }
-
-    .status-msg { color: var(--muted); font-style: italic; font-family: Arial, sans-serif; font-size: .875rem; }
-
-    .api-badge {
-      display: inline-block;
-      font-size: .65rem; font-weight: 600; font-family: Arial, sans-serif;
-      text-transform: uppercase; letter-spacing: .6px;
-      color: var(--teal); border: 1px solid var(--teal);
-      padding: .1rem .45rem; border-radius: 4px;
-      vertical-align: middle; margin-left: .4rem;
-    }
-
-    /* ── Contact ── */
-    #contact { background: var(--navy); color: #fff; }
-    #contact h2 { color: #fff; border-color: rgba(255,255,255,.25); }
-
-    .contact-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
-      gap: .85rem;
-    }
-    .contact-card {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(255,255,255,.14);
-      border-radius: 10px;
-      padding: 1.4rem 1rem;
-      text-align: center;
-      text-decoration: none;
-      color: #fff;
-      transition: background .18s;
-      display: block;
-    }
-    .contact-card:hover { background: rgba(255,255,255,.14); }
-    .cc-icon  { font-size: 1.6rem; margin-bottom: .45rem; line-height: 1; }
-    .cc-label { font-size: .7rem; font-family: Arial, sans-serif; text-transform: uppercase; letter-spacing: .8px; color: rgba(255,255,255,.55); }
-    .cc-value { font-size: .82rem; font-family: Arial, sans-serif; margin-top: .2rem; word-break: break-all; }
-
+    /* ─────────────────────────────
+       Footer
+    ───────────────────────────── */
     footer {
+      padding: 1.25rem 2rem;
       background: #0f172a;
       color: rgba(255,255,255,.35);
       text-align: center;
-      padding: 1.25rem 2rem;
-      font-family: Arial, sans-serif;
-      font-size: .75rem;
-      line-height: 1.6;
+      font: .75rem/1.6 Arial, sans-serif;
     }
-    footer a { color: rgba(255,255,255,.45); text-decoration: none; }
-    footer a:hover { color: rgba(255,255,255,.65); }
 
-    /* ── Responsive ── */
-    @media (max-width: 620px) {
-      .about-inner { flex-direction: column; align-items: center; text-align: center; }
-      .nav-brand { display: none; }
-      .nav-links { gap: 1.2rem; }
+    footer a {
+      color: rgba(255,255,255,.48);
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: rgba(255,255,255,.7);
+    }
+
+    /* ─────────────────────────────
+       Responsive
+    ───────────────────────────── */
+    @media (max-width: 700px) {
+      #about {
+        min-height: auto;
+      }
+
+      .about-inner {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .name-row,
+      .hero-contact {
+        justify-content: center;
+      }
+
+      .about-text {
+        width: 100%;
+      }
+    }
+
+    @media (max-width: 480px) {
+      nav {
+        padding: 0 1rem;
+      }
+
+      .container {
+        padding: 0 1.15rem;
+      }
+
+      section {
+        padding: 3.5rem 0;
+      }
+
+      .hero-contact a {
+        width: 100%;
+        justify-content: flex-start;
+        white-space: normal;
+      }
     }
   </style>
 </head>
+
 <body>
 
-<!-- ════════════ NAV ════════════ -->
-<nav>
-  <span class="nav-brand">Khanh Duy Tran</span>
-  <ul class="nav-links">
-    <li><a href="#about">About</a></li>
-    <li><a href="#academic">Academic</a></li>
-    <li><a href="#publications">Publications</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
+  <!-- ════════════ TOP BAR ════════════ -->
+  <nav>
+    <span class="nav-brand">Khanh Duy Tran</span>
+  </nav>
 
-<!-- ════════════ ABOUT ════════════ -->
-<section id="about">
-  <div class="container">
-    <div class="about-inner">
-      <div class="avatar-wrap">
-        <div class="avatar">
-          <img src="cover/avatar.jpg" alt="Portrait of Khanh Duy Tran" draggable="false">
-          <span class="avatar-watermark">© Khanh Duy Tran · Personal Profile</span>
+  <!-- ════════════ ABOUT / RESEARCH ════════════ -->
+  <section id="about">
+    <div class="container">
+      <div class="about-inner">
+
+        <div class="avatar-wrap">
+          <div class="avatar">
+            <img src="cover/avatar.jpg" alt="Portrait of Khanh Duy Tran" draggable="false">
+            <span class="avatar-watermark">© Khanh Duy Tran · Personal Profile</span>
+          </div>
+          <div class="avatar-note">Portrait © Khanh Duy Tran · Please do not reuse.</div>
         </div>
-        <div class="avatar-note">Portrait © Khanh Duy Tran · Please do not reuse.</div>
-      </div>
-      <div class="about-text">
-        <h1>Khanh Duy Tran</h1>
-        <p>
-          I earned my Bachelor of Engineering in Electrical Engineering from HCMIU, where my
-          undergraduate dissertation focused on wearable platforms integrating <strong>Edge AI</strong>
-          for continuous, real-time arrhythmia screening using single-lead II ECG.
-        </p>
-        <p>
-          I am currently completing my master's dissertation, extending this work toward
-          fine-grained arrhythmia classification and multi-lead ECG analysis. As a Research
-          Assistant, I work on wearable technologies, physiological signal processing, and
-          biomedical signal analysis.
-        </p>
-        <p>
-          My research interests extend beyond wearable systems to include cloud computing,
-          telemedicine, and cloud-integrated healthcare services using technologies such as
-          AWS and MongoDB Atlas. I aim to develop not only theoretical research proposals,
-          but also practical technologies that can support real-world healthcare applications.
-        </p>
-        <button class="personal-letter-btn" type="button" id="open-letter">
-          ♡ A Personal Note — Engagement Day
-        </button>
-      </div>
-    </div>
-  </div>
-</section>
 
-<!-- ════════════ ACADEMIC ════════════ -->
-<section id="academic">
-  <div class="container">
-    <h2>Academic Background</h2>
+        <div class="about-text">
+          <div class="name-row">
+            <h1>Khanh Duy Tran</h1>
 
-    <!-- Education — fetched from ORCID -->
-    <div class="tl-group">
-      <div class="section-label">Education <span class="api-badge">via ORCID</span></div>
-      <div class="timeline" id="edu-list"><span class="status-msg">Loading…</span></div>
-    </div>
+            <button class="cv-btn" type="button" id="open-cv">
+              <span class="button-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM9 12h6v1.5H9V12zm0 3h6v1.5H9V15zm0 3h4.5v1.5H9V18z"/>
+                </svg>
+              </span>
+              View CV
+            </button>
+          </div>
 
-    <!-- Work Experience — fetched from ORCID first, then enriched with curated hardcoded details -->
-    <div class="tl-group">
-      <div class="section-label">Research &amp; Work Experience <span class="api-badge">via ORCID + curated</span></div>
-      <div class="timeline" id="work-list"><span class="status-msg">Loading…</span></div>
-    </div>
+          <div class="hero-contact">
+            <a href="mailto:khanh1234tg@gmail.com" aria-label="Email Khanh Duy Tran">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M2 5h20v14H2V5zm2 2v.4l8 5.1 8-5.1V7H4zm16 10V9.8l-8 5.1-8-5.1V17h16z"/>
+                </svg>
+              </span>
+              <span class="contact-label">Email</span>
+              <span>khanh1234tg@gmail.com</span>
+            </a>
 
-    <!-- Honors & Funding — ORCID entries first, then static -->
-    <div class="tl-group">
-      <div class="section-label">Honors, Awards &amp; Funding <span class="api-badge">via ORCID</span></div>
-      <div class="timeline">
-        <!-- ORCID-fetched funding injected here -->
-        <div id="fund-list"></div>
-        <!-- Static awards not tracked in ORCID -->
-        <div class="tl-item">
-          <div class="tl-date">2024</div>
-          <div class="tl-title">Valedictorian — School of Electrical Engineering, Class K20</div>
-          <div class="tl-place">International University</div>
+            <a href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 3 1.5 8.5 12 14l8-4.2V16h1.5V9L22.5 8.5 12 3zm-6 9.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8L12 15.3 6 12.2z"/>
+                </svg>
+              </span>
+              <span class="contact-label">Scholar</span>
+              <span>Khanh Duy Tran</span>
+            </a>
+
+            <a href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener" aria-label="ORCID profile">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2.2A9.8 9.8 0 1 0 12 21.8 9.8 9.8 0 0 0 12 2.2zM8.2 7.1c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2S7 9 7 8.3s.5-1.2 1.2-1.2zM7.3 10.6h1.8v6.2H7.3v-6.2zm3.2 0h3c2.7 0 4.3 1.3 4.3 3.1 0 2-1.8 3.1-4.3 3.1h-3v-6.2zm1.8 1.5v3.2h1.1c1.5 0 2.5-.5 2.5-1.6 0-1-.9-1.6-2.5-1.6h-1.1z"/>
+                </svg>
+              </span>
+              <span class="contact-label">ORCID</span>
+              <span>0009-0006-5761-2683</span>
+            </a>
+
+            <a href="https://github.com/AlexTran1703" target="_blank" rel="noopener" aria-label="GitHub profile">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1.1A9.7 9.7 0 0 1 12 7c.9 0 1.8.1 2.7.4 2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.4.1 2.7.7.8 1.1 1.7 1.1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.7c0 .3.2.6.7.5A10.1 10.1 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/>
+                </svg>
+              </span>
+              <span class="contact-label">GitHub</span>
+              <span>@AlexTran1703</span>
+            </a>
+
+            <a href="https://www.linkedin.com/in/khanh-alex-tran/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
+              <span class="contact-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24">
+                  <path d="M4.3 3.5A2.3 2.3 0 1 0 4.3 8a2.3 2.3 0 0 0 0-4.5zM2.4 9.7h3.8V21H2.4V9.7zm6.2 0h3.6v1.5h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7v6h-3.8v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H8.6V9.7z"/>
+                </svg>
+              </span>
+              <span class="contact-label">LinkedIn</span>
+              <span>khanh-alex-tran</span>
+            </a>
+          </div>
+
+          <p>
+            I am an M.Eng. student in Electrical Engineering and a Research Assistant working on
+            <strong>edge-enabled AI for wearable biomedical systems</strong>, with emphasis on technical feasibility
+            and cardiovascular monitoring outside conventional clinical settings.
+          </p>
+
+          <p>
+            My work spans <strong>wearable biomedical systems engineering</strong>, including hardware design,
+            physiological signal processing, embedded AI deployment, and cloud/system integration; and
+            <strong>reliability-aware clinical AI</strong>, including predictive uncertainty, selective prediction,
+            risk--coverage analysis, and identification of low-confidence diagnostic outputs.
+          </p>
+
+          <button class="personal-letter-btn" type="button" id="open-letter">
+            <span class="button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 21s-7.2-4.6-9.4-8.7C.8 9 .9 5.9 3.4 4.2c2.1-1.4 4.8-.8 6.4 1.1L12 7.8l2.2-2.5c1.6-1.9 4.3-2.5 6.4-1.1 2.5 1.7 2.6 4.8.8 8.1C19.2 16.4 12 21 12 21z"/>
+              </svg>
+            </span>
+            A Personal Note — Engagement Day
+          </button>
         </div>
+
       </div>
     </div>
+  </section>
 
-  </div>
-</section>
-
-<!-- ════════════ PUBLICATIONS ════════════ -->
-<section id="publications">
-  <div class="container">
-    <h2>Publications</h2>
-    <!-- <p class="pub-source">
-      Live-fetched from
-      <a href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener">ORCID</a>
-      · also indexed on
-      <a href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>.
-      Updates automatically as new works are added to ORCID.
-    </p> -->
-    <div id="pub-list"><span class="status-msg">Loading publications…</span></div>
-  </div>
-</section>
-
-<!-- ════════════ CONTACT ════════════ -->
-<section id="contact">
-  <div class="container">
-    <h2>Contact</h2>
-    <div class="contact-grid">
-      <a class="contact-card" href="mailto:khanh1234tg@gmail.com">
-        <div class="cc-icon">✉</div>
-        <div class="cc-label">Email</div>
-        <div class="cc-value">khanh1234tg@gmail.com</div>
-      </a>
-      <a class="contact-card" href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener">
-        <div class="cc-icon">🎓</div>
-        <div class="cc-label">Google Scholar</div>
-        <div class="cc-value">Khanh Duy Tran</div>
-      </a>
-      <a class="contact-card" href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener">
-        <div class="cc-icon">🆔</div>
-        <div class="cc-label">ORCID</div>
-        <div class="cc-value">0009-0006-5761-2683</div>
-      </a>
-      <a class="contact-card" href="https://github.com/AlexTran1703" target="_blank" rel="noopener">
-        <div class="cc-icon">⌨</div>
-        <div class="cc-label">GitHub</div>
-        <div class="cc-value">@AlexTran1703</div>
-      </a>
-      <a class="contact-card" href="https://www.linkedin.com/in/khanh-alex-tran/" target="_blank" rel="noopener">
-        <div class="cc-icon">💼</div>
-        <div class="cc-label">LinkedIn</div>
-        <div class="cc-value">khanh-alex-tran</div>
-      </a>
-    </div>
-  </div>
-</section>
-
-<!-- ════════════ PERSONAL LETTER MODAL ════════════ -->
-<div class="letter-modal" id="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-title" aria-hidden="true">
-  <div class="letter-dialog">
-    <div class="letter-header">
-      <div>
-        <div class="letter-eyebrow">Personal Archive · Engagement Day</div>
-        <div class="letter-title" id="letter-title">A Letter to My Wife</div>
+  <!-- ════════════ PUBLICATIONS ════════════ -->
+  <section id="publications">
+    <div class="container">
+      <h2>Publications</h2>
+      <div id="pub-list">
+        <span class="status-msg">Loading publications…</span>
       </div>
-      <button class="letter-close" type="button" id="close-letter" aria-label="Close letter">×</button>
     </div>
-    <iframe
-      class="letter-frame"
-      src="cover/engagement-letter.pdf"
-      title="Engagement Day letter to my wife">
-    </iframe>
-    <div class="letter-fallback">
-      If your browser cannot display the PDF,
-      <a href="cover/engagement-letter.pdf" target="_blank" rel="noopener">open the letter in a new tab</a>.
+  </section>
+
+  <!-- ════════════ CV MODAL ════════════ -->
+  <div class="pdf-modal" id="cv-modal" role="dialog" aria-modal="true" aria-labelledby="cv-title" aria-hidden="true">
+    <div class="pdf-dialog">
+      <div class="pdf-header">
+        <div>
+          <div class="pdf-eyebrow">Curriculum Vitae</div>
+          <div class="pdf-title" id="cv-title">Khanh Duy Tran — CV</div>
+          <div class="pdf-subtitle">Latest portfolio CV.</div>
+        </div>
+        <button class="pdf-close" type="button" id="close-cv" aria-label="Close CV">×</button>
+      </div>
+
+      <iframe
+        class="pdf-frame"
+        src="cv/cv.pdf"
+        title="Curriculum Vitae of Khanh Duy Tran">
+      </iframe>
+
+      <div class="pdf-fallback">
+        If your browser cannot display the PDF,
+        <a href="cv/cv.pdf" target="_blank" rel="noopener">open the CV in a new tab</a>.
+      </div>
     </div>
   </div>
-</div>
 
-<footer>
-  © 2025 Khanh Duy Tran &nbsp;·&nbsp;
-  Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a> &nbsp;·&nbsp;
-  Education, funding &amp; publications auto-fetched via <a href="https://pub.orcid.org" target="_blank" rel="noopener">ORCID Public API</a>
-</footer>
+  <!-- ════════════ PERSONAL LETTER MODAL ════════════ -->
+  <div class="pdf-modal" id="letter-modal" role="dialog" aria-modal="true" aria-labelledby="letter-title" aria-hidden="true">
+    <div class="pdf-dialog">
+      <div class="pdf-header">
+        <div>
+          <div class="pdf-eyebrow">Personal Archive · Engagement Day</div>
+          <div class="pdf-title" id="letter-title">A Letter to My Wife</div>
+        </div>
+        <button class="pdf-close" type="button" id="close-letter" aria-label="Close letter">×</button>
+      </div>
 
-<!-- ════════════ SCRIPT ════════════ -->
-<script>
-(function () {
-  const ORCID  = '0009-0006-5761-2683';
-  const BASE   = 'https://pub.orcid.org/v3.0/' + ORCID;
-  const HDRS   = { 'Accept': 'application/json' };
-  const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+      <iframe
+        class="pdf-frame"
+        src="cover/engagement-letter.pdf"
+        title="Engagement Day letter to my wife">
+      </iframe>
 
-  function safe(s) {
-    return String(s || '').replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
-  }
-  function doiUrl(doi) { return 'https://doi.org/' + encodeURIComponent(doi); }
-  function padMonth(m) { return m ? String(m).padStart(2,'0') : '00'; }
-  function fmtMonth(m) { const n=parseInt(m,10); return (n>=1&&n<=12)?MONTHS[n-1]:''; }
-
-  function extractDoi(ids) {
-    const hit = (ids?.['external-id']||[]).find(e=>e['external-id-type']==='doi');
-    return hit ? hit['external-id-value'] : null;
-  }
-
-  function dateRange(start, end) {
-    const s = start?.year?.value || '';
-    const e = end?.year?.value   || '';
-    if (!s) return '';
-    return e ? `${s} – ${e}` : `${s} – Present`;
-  }
-
-  /* Enrichment: ORCID stores only role/org/dates — augment known entries with thesis/GPA */
-  const EDU_EXTRA = {
-    'Master of Engineering': {
-      titleSuffix: '',
-      org: 'International University – Vietnam National University, Ho Chi Minh City',
-      desc: 'Dissertation: <em>Edge AI-Enabled Smart Healthcare Framework for Real-Time Cardiovascular Disease Detection</em>.'
-    },
-    'Bachelor of Engineering': {
-      titleSuffix: ' — <span style="font-weight:400;">Valedictorian (K20)</span>',
-      org: 'International University – Vietnam National University, Ho Chi Minh City · ABET-accredited',
-      desc: 'Dissertation: <em>Development of a Real-Time Automatic Cardiovascular Disease Detection Edge Computing System</em>. '
-    }
-  };
-
-  /* Curated work details: ORCID is used first for role/org/dates; these bullets enrich matching entries and act as fallback. */
-  const WORK_HARDCODE = [
-    {
-      role: 'Research Assistant',
-      org: 'School of Electrical Engineering, IU–VNUHCM · Advisor: Dr. Quoc T. Huynh',
-      start: { year: { value: '2022' } },
-      end: null,
-      desc: [
-        'Designs wearable edge AI systems for arrhythmia screening using single-lead II and multi-lead ECG signals.',
-        'Develops continuous cardiovascular monitoring, arrhythmia type classification, and fine-grained rhythm prediction workflows.',
-        'Contributes to PCG, PPG, and other physiological signal processing research, from AI model development and embedded-system prototyping to manuscript writing and publication.',
-        'Collaborates with interdisciplinary teams across academia and industry on nationally funded projects and peer-reviewed publications.'
-      ]
-    },
-    {
-      role: 'Associate Software Engineer',
-      org: 'OPSWAT',
-      start: { year: { value: '2024' } },
-      end: { year: { value: '2025' } },
-      desc: [
-        'Developed sandboxed Linux applications for malware detection and system scanning.',
-        'Improved process isolation, runtime stability, and overall product performance.',
-        'Maintained core features, resolved technical issues, and optimized flagship cybersecurity products deployed across government, defense, and industrial sectors.'
-      ]
-    }
-  ];
-
-  const WORK_EXTRA = WORK_HARDCODE.reduce((acc, item) => {
-    acc[item.role.toLowerCase()] = item;
-    return acc;
-  }, {});
-
-  function affiliationKey(item) {
-    return `${item.role || ''}|${item.org || ''}`.toLowerCase().replace(/\s+/g, ' ').trim();
-  }
-
-  function renderTimelineDesc(desc) {
-    if (Array.isArray(desc) && desc.length) {
-      return `<ul class="tl-points">${desc.map(point => `<li>${safe(point)}</li>`).join('')}</ul>`;
-    }
-    return desc ? `<div class="tl-desc">${desc}</div>` : '';
-  }
-
-  function renderTimelineItem(item) {
-    return `
-<div class="tl-item">
-  <div class="tl-date">${safe(dateRange(item.start, item.end))}</div>
-  <div class="tl-title">${safe(item.role)}</div>
-  ${item.org ? `<div class="tl-place">${safe(item.org)}</div>` : ''}
-  ${renderTimelineDesc(item.desc)}
-</div>`;
-  }
-
-  /* ── Education (ORCID /educations) ── */
-  async function loadEducation() {
-    const el = document.getElementById('edu-list');
-    try {
-      const res  = await fetch(BASE + '/educations', { headers: HDRS });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-
-      const groups = data['affiliation-group'] || [];
-      if (!groups.length) { el.innerHTML = '<span class="status-msg">No education records found.</span>'; return; }
-
-      /* Sort descending by start year */
-      const items = groups.map(g => {
-        const s = (g.summaries||[])[0]?.['education-summary'] || {};
-        return {
-          role:  s['role-title'] || '',
-          org:   s.organization?.name || '',
-          start: s['start-date'],
-          end:   s['end-date'],
-        };
-      }).sort((a,b) => {
-        const ya = parseInt(a.start?.year?.value||'0',10);
-        const yb = parseInt(b.start?.year?.value||'0',10);
-        return yb - ya;
-      });
-
-      el.innerHTML = items.map(it => {
-        const ex    = EDU_EXTRA[it.role] || {};
-        const title = safe(it.role) + (ex.titleSuffix || '');
-        const org   = safe(ex.org || it.org);
-        const date  = safe(dateRange(it.start, it.end));
-        const desc  = ex.desc || '';
-        return `
-<div class="tl-item">
-  <div class="tl-date">${date}</div>
-  <div class="tl-title">${title}</div>
-  <div class="tl-place">${org}</div>
-  ${desc ? `<div class="tl-desc">${desc}</div>` : ''}
-</div>`;
-      }).join('');
-    } catch(err) {
-      el.innerHTML = '<span class="status-msg">Could not load education. <a href="https://orcid.org/0009-0006-5761-2683" target="_blank">View on ORCID</a>.</span>';
-    }
-  }
-
-  /* ── Work Experience (ORCID /employments first, curated hardcoded second) ── */
-  async function loadWorkExperience() {
-    const el = document.getElementById('work-list');
-    const hardcodedItems = WORK_HARDCODE.map(item => ({ ...item, source: 'curated' }));
-
-    try {
-      const res = await fetch(BASE + '/employments', { headers: HDRS });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-
-      const groups = data['affiliation-group'] || [];
-      const orcidItems = groups.map(g => {
-        const s = (g.summaries || [])[0]?.['employment-summary'] || {};
-        const role = s['role-title'] || '';
-        const extra = WORK_EXTRA[role.toLowerCase()] || {};
-        return {
-          role: role || extra.role || 'Employment',
-          org: extra.org || s.organization?.name || '',
-          start: s['start-date'],
-          end: s['end-date'],
-          desc: extra.desc || [],
-          source: 'orcid'
-        };
-      }).filter(item => item.role || item.org).sort((a, b) => {
-        const ya = parseInt(a.start?.year?.value || '0', 10);
-        const yb = parseInt(b.start?.year?.value || '0', 10);
-        return yb - ya;
-      });
-
-      const seen = new Set(orcidItems.map(affiliationKey));
-      const missingHardcoded = hardcodedItems.filter(item => !seen.has(affiliationKey(item)));
-      const items = [...orcidItems, ...missingHardcoded];
-
-      el.innerHTML = items.length
-        ? items.map(renderTimelineItem).join('')
-        : hardcodedItems.map(renderTimelineItem).join('');
-    } catch (err) {
-      el.innerHTML = hardcodedItems.map(renderTimelineItem).join('');
-    }
-  }
-
-  /* ── Funding (ORCID /fundings) ── */
-  async function loadFunding() {
-    const el = document.getElementById('fund-list');
-    try {
-      const res  = await fetch(BASE + '/fundings', { headers: HDRS });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-
-      const groups = data.group || [];
-      if (!groups.length) { el.innerHTML = ''; return; }
-
-      const items = groups.map(g => {
-        const s = (g['funding-summary']||[])[0] || {};
-        return {
-          title: s.title?.title?.value || '',
-          org:   s.organization?.name  || '',
-          start: s['start-date'],
-          end:   s['end-date'],
-        };
-      }).sort((a,b)=>{
-        const ya=parseInt(a.start?.year?.value||'0',10);
-        const yb=parseInt(b.start?.year?.value||'0',10);
-        return yb-ya;
-      });
-
-      el.innerHTML = items.map(it => `
-<div class="tl-item">
-  <div class="tl-date">${safe(dateRange(it.start, it.end))}</div>
-  <div class="tl-title">${safe(it.title)}</div>
-  ${it.org ? `<div class="tl-place">${safe(it.org)}</div>` : ''}
-</div>`).join('');
-    } catch(err) {
-      el.innerHTML = '';
-    }
-  }
-
-  /* ── Publications (ORCID /works) ── */
-  const MY_AUTHOR_ALIASES = [
-    'Khanh D. Tran',
-    'Khanh Duy Tran',
-    'Tran Khanh Duy',
-    'KD Tran',
-    'K. D. Tran',
-    'K D Tran',
-    'Tran KD',
-    'Tran K. D.'
-  ];
-
-  const PUB_AUTHOR_FALLBACK = {
-    'developing a mixed deep learning model approach for arrhythmia classification based on ecg signal':
-      ['KD Tran', 'LH Tang', 'UD Nguyen', 'QT Huynh']
-  };
-
-  function normText(s) {
-    return String(s || '')
-      .toLowerCase()
-      .normalize('NFD')
-      .replace(/[\u0300-\u036f]/g, '')
-      .replace(/[^a-z0-9]+/g, ' ')
-      .trim();
-  }
-
-  function isMyName(name) {
-    const n = normText(name);
-    return MY_AUTHOR_ALIASES.some(alias => n === normText(alias));
-  }
-
-  function formatAuthors(authors) {
-    if (!authors || !authors.length) return '';
-    return authors.map(author => {
-      const clean = safe(author);
-      return isMyName(author) ? `<strong>${clean}</strong>` : clean;
-    }).join(', ');
-  }
-
-  function fallbackAuthorsFor(title) {
-    return PUB_AUTHOR_FALLBACK[normText(title)] || [];
-  }
-
-  function extractContributors(workDetail) {
-    return (workDetail.contributors?.contributor || [])
-      .map(c => c['credit-name']?.value || '')
-      .filter(Boolean);
-  }
-
-  async function fetchWorkDetail(putCode) {
-    if (!putCode) return null;
-    const res = await fetch(BASE + '/work/' + putCode, { headers: HDRS });
-    if (!res.ok) return null;
-    return await res.json();
-  }
-
-  async function loadPublications() {
-    const el = document.getElementById('pub-list');
-    try {
-      const res  = await fetch(BASE + '/works', { headers: HDRS });
-      if (!res.ok) throw new Error('HTTP ' + res.status);
-      const data = await res.json();
-
-      const groups = data.group || [];
-      if (!groups.length) { el.innerHTML = '<span class="status-msg">No publications listed yet.</span>'; return; }
-
-      const pubs = await Promise.all(groups.map(async g => {
-        const s  = (g['work-summary']||[])[0] || {};
-        const pd = s['publication-date'] || {};
-        const detail = await fetchWorkDetail(s['put-code']);
-        const title = s.title?.title?.value || detail?.title?.title?.value || 'Untitled';
-        const authors = extractContributors(detail);
-
-        return {
-          title,
-          authors: authors.length ? authors : fallbackAuthorsFor(title),
-          year:  pd.year?.value  || detail?.['publication-date']?.year?.value  || '',
-          month: pd.month?.value || detail?.['publication-date']?.month?.value || '',
-          venue: s['journal-title']?.value || detail?.['journal-title']?.value || '',
-          type:  (s.type || detail?.type || '').replace(/-/g,' '),
-          doi:   extractDoi(s['external-ids']) || extractDoi(detail?.['external-ids']),
-        };
-      }));
-
-      pubs.sort((a,b)=>{
-        const da=(a.year||'0')+padMonth(a.month);
-        const db=(b.year||'0')+padMonth(b.month);
-        return db.localeCompare(da);
-      });
-
-      el.innerHTML = pubs.map(p => {
-        const date    = p.year + (p.month ? ' · ' + fmtMonth(p.month) : '');
-        const doiLink = p.doi ? `<a class="pub-link" href="${doiUrl(p.doi)}" target="_blank" rel="noopener">DOI</a>` : '';
-        const schLink = `<a class="pub-link" href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>`;
-        const authors = formatAuthors(p.authors);
-        return `
-<div class="pub-item">
-  <div class="pub-meta">
-    <span class="pub-year">${safe(date)}</span>
-    ${p.type?`<span class="pub-type">${safe(p.type)}</span>`:''}
+      <div class="pdf-fallback">
+        If your browser cannot display the PDF,
+        <a href="cover/engagement-letter.pdf" target="_blank" rel="noopener">open the letter in a new tab</a>.
+      </div>
+    </div>
   </div>
-  <div class="pub-title">${safe(p.title)}</div>
-  ${authors ? `<div class="pub-authors">${authors}</div>` : ''}
-  ${p.venue?`<div class="pub-venue">${safe(p.venue)}</div>`:''}
-  <div class="pub-links">${doiLink}${schLink}</div>
-</div>`;
-      }).join('');
-    } catch(err) {
-      el.innerHTML = '<span class="status-msg">Could not load publications. <a href="https://orcid.org/0009-0006-5761-2683" target="_blank">View on ORCID</a>.</span>';
-    }
-  }
 
+  <footer>
+    © 2026 Khanh Duy Tran &nbsp;·&nbsp;
+    Hosted on <a href="https://pages.github.com" target="_blank" rel="noopener">GitHub Pages</a>
+    &nbsp;·&nbsp;
+    Publications auto-fetched via
+    <a href="https://pub.orcid.org" target="_blank" rel="noopener">ORCID Public API</a>
+  </footer>
 
-  /* ── Personal letter modal ── */
-  const letterModal = document.getElementById('letter-modal');
-  const openLetterBtn = document.getElementById('open-letter');
-  const closeLetterBtn = document.getElementById('close-letter');
+  <!-- ════════════ SCRIPT ════════════ -->
+  <script>
+    (function () {
+      const ORCID = '0009-0006-5761-2683';
+      const BASE = 'https://pub.orcid.org/v3.0/' + ORCID;
+      const HDRS = { 'Accept': 'application/json' };
+      const MONTHS = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
 
-  function openLetter() {
-    letterModal.classList.add('is-open');
-    letterModal.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-    closeLetterBtn.focus();
-  }
+      function safe(s) {
+        return String(s || '')
+          .replace(/&/g, '&amp;')
+          .replace(/</g, '&lt;')
+          .replace(/>/g, '&gt;');
+      }
 
-  function closeLetter() {
-    letterModal.classList.remove('is-open');
-    letterModal.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
-    openLetterBtn.focus();
-  }
+      function doiUrl(doi) {
+        return 'https://doi.org/' + encodeURIComponent(doi);
+      }
 
-  openLetterBtn.addEventListener('click', openLetter);
-  closeLetterBtn.addEventListener('click', closeLetter);
-  letterModal.addEventListener('click', (event) => {
-    if (event.target === letterModal) closeLetter();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && letterModal.classList.contains('is-open')) closeLetter();
-  });
+      function padMonth(m) {
+        return m ? String(m).padStart(2, '0') : '00';
+      }
 
-  /* ── Init ── */
-  loadEducation();
-  loadWorkExperience();
-  loadFunding();
-  loadPublications();
-})();
-</script>
+      function fmtMonth(m) {
+        const n = parseInt(m, 10);
+        return (n >= 1 && n <= 12) ? MONTHS[n - 1] : '';
+      }
+
+      function extractDoi(ids) {
+        const hit = (ids?.['external-id'] || []).find(
+          e => e['external-id-type'] === 'doi'
+        );
+        return hit ? hit['external-id-value'] : null;
+      }
+
+      const MY_AUTHOR_ALIASES = [
+        'Khanh D. Tran',
+        'Khanh Duy Tran',
+        'Tran Khanh Duy',
+        'KD Tran',
+        'K. D. Tran',
+        'K D Tran',
+        'Tran KD',
+        'Tran K. D.'
+      ];
+
+      const PUB_AUTHOR_FALLBACK = {
+        'developing a mixed deep learning model approach for arrhythmia classification based on ecg signal':
+          ['KD Tran', 'LH Tang', 'UD Nguyen', 'QT Huynh']
+      };
+
+      function normText(s) {
+        return String(s || '')
+          .toLowerCase()
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, '')
+          .replace(/[^a-z0-9]+/g, ' ')
+          .trim();
+      }
+
+      function isMyName(name) {
+        const n = normText(name);
+        return MY_AUTHOR_ALIASES.some(alias => n === normText(alias));
+      }
+
+      function formatAuthors(authors) {
+        if (!authors || !authors.length) return '';
+        return authors.map(author => {
+          const clean = safe(author);
+          return isMyName(author) ? `<strong>${clean}</strong>` : clean;
+        }).join(', ');
+      }
+
+      function fallbackAuthorsFor(title) {
+        return PUB_AUTHOR_FALLBACK[normText(title)] || [];
+      }
+
+      function extractContributors(workDetail) {
+        return (workDetail?.contributors?.contributor || [])
+          .map(c => c['credit-name']?.value || '')
+          .filter(Boolean);
+      }
+
+      async function fetchWorkDetail(putCode) {
+        if (!putCode) return null;
+        const res = await fetch(BASE + '/work/' + putCode, { headers: HDRS });
+        if (!res.ok) return null;
+        return await res.json();
+      }
+
+      async function loadPublications() {
+        const el = document.getElementById('pub-list');
+
+        try {
+          const res = await fetch(BASE + '/works', { headers: HDRS });
+          if (!res.ok) throw new Error('HTTP ' + res.status);
+
+          const data = await res.json();
+          const groups = data.group || [];
+
+          if (!groups.length) {
+            el.innerHTML = '<span class="status-msg">No publications listed yet.</span>';
+            return;
+          }
+
+          const pubs = await Promise.all(groups.map(async g => {
+            const s = (g['work-summary'] || [])[0] || {};
+            const pd = s['publication-date'] || {};
+            const detail = await fetchWorkDetail(s['put-code']);
+            const title = s.title?.title?.value || detail?.title?.title?.value || 'Untitled';
+            const authors = extractContributors(detail);
+
+            return {
+              title,
+              authors: authors.length ? authors : fallbackAuthorsFor(title),
+              year: pd.year?.value || detail?.['publication-date']?.year?.value || '',
+              month: pd.month?.value || detail?.['publication-date']?.month?.value || '',
+              venue: s['journal-title']?.value || detail?.['journal-title']?.value || '',
+              type: (s.type || detail?.type || '').replace(/-/g, ' '),
+              doi: extractDoi(s['external-ids']) || extractDoi(detail?.['external-ids'])
+            };
+          }));
+
+          pubs.sort((a, b) => {
+            const da = (a.year || '0') + padMonth(a.month);
+            const db = (b.year || '0') + padMonth(b.month);
+            return db.localeCompare(da);
+          });
+
+          el.innerHTML = pubs.map(p => {
+            const date = p.year + (p.month ? ' · ' + fmtMonth(p.month) : '');
+            const doiLink = p.doi
+              ? `<a class="pub-link" href="${doiUrl(p.doi)}" target="_blank" rel="noopener">DOI</a>`
+              : '';
+            const scholarLink =
+              '<a class="pub-link" href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener">Scholar</a>';
+            const authors = formatAuthors(p.authors);
+
+            return `
+              <div class="pub-item">
+                <div class="pub-meta">
+                  <span class="pub-year">${safe(date)}</span>
+                  ${p.type ? `<span class="pub-type">${safe(p.type)}</span>` : ''}
+                </div>
+                <div class="pub-title">${safe(p.title)}</div>
+                ${authors ? `<div class="pub-authors">${authors}</div>` : ''}
+                ${p.venue ? `<div class="pub-venue">${safe(p.venue)}</div>` : ''}
+                <div class="pub-links">${doiLink}${scholarLink}</div>
+              </div>`;
+          }).join('');
+
+        } catch (err) {
+          el.innerHTML =
+            '<span class="status-msg">Could not load publications. ' +
+            '<a href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener">View on ORCID</a>.</span>';
+        }
+      }
+
+      /* ───────────── CV modal ───────────── */
+      const cvModal = document.getElementById('cv-modal');
+      const openCvBtn = document.getElementById('open-cv');
+      const closeCvBtn = document.getElementById('close-cv');
+
+      function openCv() {
+        cvModal.classList.add('is-open');
+        cvModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeCvBtn.focus();
+      }
+
+      function closeCv() {
+        cvModal.classList.remove('is-open');
+        cvModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        openCvBtn.focus();
+      }
+
+      openCvBtn.addEventListener('click', openCv);
+      closeCvBtn.addEventListener('click', closeCv);
+      cvModal.addEventListener('click', event => {
+        if (event.target === cvModal) closeCv();
+      });
+
+      /* ───────────── Personal letter modal ───────────── */
+      const letterModal = document.getElementById('letter-modal');
+      const openLetterBtn = document.getElementById('open-letter');
+      const closeLetterBtn = document.getElementById('close-letter');
+
+      function openLetter() {
+        letterModal.classList.add('is-open');
+        letterModal.setAttribute('aria-hidden', 'false');
+        document.body.style.overflow = 'hidden';
+        closeLetterBtn.focus();
+      }
+
+      function closeLetter() {
+        letterModal.classList.remove('is-open');
+        letterModal.setAttribute('aria-hidden', 'true');
+        document.body.style.overflow = '';
+        openLetterBtn.focus();
+      }
+
+      openLetterBtn.addEventListener('click', openLetter);
+      closeLetterBtn.addEventListener('click', closeLetter);
+      letterModal.addEventListener('click', event => {
+        if (event.target === letterModal) closeLetter();
+      });
+
+      document.addEventListener('keydown', event => {
+        if (event.key !== 'Escape') return;
+        if (cvModal.classList.contains('is-open')) closeCv();
+        if (letterModal.classList.contains('is-open')) closeLetter();
+      });
+
+      loadPublications();
+    })();
+  </script>
 
 </body>
 </html>
