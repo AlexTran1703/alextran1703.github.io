@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Khanh Duy Tran — Research Portfolio</title>
-  <meta name="description" content="Research portfolio of Khanh Duy Tran — M.Eng. student and Research Assistant working on edge-enabled AI, wearable biomedical systems, physiological signal processing, and reliability-aware clinical AI.">
+  <meta name="description" content="Research portfolio of Khanh Duy Tran — wearable biomedical platforms, sensing reliability, clinically meaningful engineering, publications, and selected personal interests.">
 
   <style>
     *, *::before, *::after {
@@ -50,11 +50,51 @@
     }
 
     .nav-brand {
+      flex: 0 0 auto;
       color: #fff;
       font-family: Arial, sans-serif;
       font-size: .9rem;
       font-weight: 700;
       letter-spacing: .4px;
+    }
+
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: .35rem;
+      margin-left: 1rem;
+    }
+
+    .nav-icon {
+      width: 34px;
+      height: 34px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      flex: 0 0 auto;
+      padding: 0;
+      border: 1px solid transparent;
+      border-radius: 7px;
+      background: transparent;
+      color: rgba(255,255,255,.88);
+      text-decoration: none;
+      cursor: pointer;
+      transition: background .18s, border-color .18s, color .18s, transform .18s;
+    }
+
+    .nav-icon:hover,
+    .nav-icon:focus-visible {
+      background: rgba(255,255,255,.10);
+      border-color: rgba(255,255,255,.22);
+      color: #fff;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .nav-icon svg {
+      width: 17px;
+      height: 17px;
+      fill: currentColor;
     }
 
     /* ─────────────────────────────
@@ -172,12 +212,12 @@
       color: #fff;
     }
 
-    /* CV button beside name */
-    .cv-btn,
     .personal-letter-btn {
       display: inline-flex;
       align-items: center;
       gap: .45rem;
+      margin-top: .35rem;
+      padding: .55rem .85rem;
       border: 1px solid rgba(255,255,255,.38);
       border-radius: 7px;
       background: rgba(255,255,255,.08);
@@ -190,24 +230,13 @@
       transition: background .18s, border-color .18s, transform .18s;
     }
 
-    .cv-btn {
-      padding: .48rem .72rem;
-    }
-
-    .personal-letter-btn {
-      margin-top: .35rem;
-      padding: .55rem .85rem;
-    }
-
-    .cv-btn:hover,
     .personal-letter-btn:hover {
       background: rgba(255,255,255,.15);
       border-color: rgba(255,255,255,.65);
       transform: translateY(-1px);
     }
 
-    .button-icon,
-    .contact-icon {
+    .button-icon {
       display: inline-flex;
       align-items: center;
       justify-content: center;
@@ -218,49 +247,6 @@
       width: 14px;
       height: 14px;
       fill: currentColor;
-    }
-
-    /* Contact chips under name */
-    .hero-contact {
-      display: flex;
-      flex-wrap: wrap;
-      gap: .55rem;
-      margin: .7rem 0 1.05rem;
-    }
-
-    .hero-contact a {
-      display: inline-flex;
-      align-items: center;
-      gap: .42rem;
-      padding: .40rem .68rem;
-      border: 1px solid rgba(255,255,255,.22);
-      border-radius: 999px;
-      background: rgba(255,255,255,.06);
-      color: rgba(255,255,255,.94);
-      text-decoration: none;
-      font: .76rem/1.2 Arial, sans-serif;
-      white-space: nowrap;
-      transition: background .18s, border-color .18s, transform .18s;
-    }
-
-    .hero-contact a:hover {
-      background: rgba(255,255,255,.14);
-      border-color: rgba(255,255,255,.44);
-      transform: translateY(-1px);
-    }
-
-    .contact-icon svg {
-      width: 14px;
-      height: 14px;
-      fill: currentColor;
-    }
-
-    .contact-label {
-      color: rgba(255,255,255,.58);
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: .5px;
-      font-size: .65rem;
     }
 
     /* ─────────────────────────────
@@ -365,6 +351,297 @@
 
     .status-msg a {
       color: var(--teal);
+    }
+
+    /* ─────────────────────────────
+       Beyond research
+    ───────────────────────────── */
+    #beyond-research {
+      background: #fff;
+    }
+
+    .beyond-intro {
+      max-width: 720px;
+      margin: -0.5rem 0 1.6rem;
+      color: #475569;
+      font-size: .95rem;
+    }
+
+    .interest-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1rem;
+    }
+
+    .interest-card {
+      padding: 1.15rem 1.25rem;
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      background: var(--light);
+    }
+
+    .interest-card h3 {
+      margin-bottom: .55rem;
+      color: var(--navy);
+      font-size: 1rem;
+      line-height: 1.35;
+    }
+
+    .interest-card p,
+    .interest-card li {
+      color: #475569;
+      font-size: .88rem;
+      line-height: 1.55;
+    }
+
+    .interest-card ul {
+      padding-left: 1.15rem;
+    }
+
+    .interest-card li + li {
+      margin-top: .35rem;
+    }
+
+    .interest-card em {
+      color: #1e293b;
+    }
+
+    /* Books-by-year slider */
+    .books-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .books-slider-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: .55rem;
+    }
+
+    .books-slider-head h3 {
+      margin-bottom: 0;
+    }
+
+    .books-year-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      flex-shrink: 0;
+    }
+
+    .books-arrow {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--navy);
+      font: 700 1rem/1 Arial, sans-serif;
+      cursor: pointer;
+      transition: border-color .18s, background .18s, transform .18s;
+    }
+
+    .books-arrow:hover,
+    .books-arrow:focus-visible {
+      border-color: var(--teal);
+      background: rgba(15,118,110,.07);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .books-year {
+      min-width: 42px;
+      color: var(--teal);
+      text-align: center;
+      font: 700 .76rem/1 Arial, sans-serif;
+      letter-spacing: .4px;
+    }
+
+    .books-viewport {
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .books-track {
+      display: flex;
+      width: 200%;
+      transform: translateX(0);
+      transition: transform .32s ease;
+    }
+
+    .books-slide {
+      width: 50%;
+      flex: 0 0 50%;
+      padding-right: .1rem;
+    }
+
+    .books-dots {
+      display: flex;
+      justify-content: center;
+      gap: .35rem;
+      margin-top: .8rem;
+    }
+
+    .books-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .books-dot.is-active {
+      background: var(--teal);
+    }
+
+    /* Shows/comics meaning slider */
+    .media-slider {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .media-slider-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: .75rem;
+      margin-bottom: .55rem;
+    }
+
+    .media-slider-head h3 {
+      margin-bottom: 0;
+    }
+
+    .media-count-nav {
+      display: inline-flex;
+      align-items: center;
+      gap: .35rem;
+      flex-shrink: 0;
+    }
+
+    .media-arrow {
+      width: 28px;
+      height: 28px;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      border: 1px solid var(--border);
+      border-radius: 50%;
+      background: #fff;
+      color: var(--navy);
+      font: 700 1rem/1 Arial, sans-serif;
+      cursor: pointer;
+      transition: border-color .18s, background .18s, transform .18s;
+    }
+
+    .media-arrow:hover,
+    .media-arrow:focus-visible {
+      border-color: var(--teal);
+      background: rgba(15,118,110,.07);
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .media-count {
+      min-width: 44px;
+      color: var(--teal);
+      text-align: center;
+      font: 700 .76rem/1 Arial, sans-serif;
+      letter-spacing: .4px;
+    }
+
+    .media-viewport {
+      overflow: hidden;
+      touch-action: pan-y;
+    }
+
+    .media-track {
+      display: flex;
+      width: 300%;
+      transform: translateX(0);
+      transition: transform .32s ease;
+    }
+
+    .media-slide {
+      width: calc(100% / 3);
+      flex: 0 0 calc(100% / 3);
+      padding-right: .1rem;
+    }
+
+    .media-title {
+      margin-bottom: .45rem;
+      color: #1e293b;
+      font-size: .9rem;
+      line-height: 1.5;
+    }
+
+    .media-note {
+      color: #475569;
+      font-size: .88rem;
+      line-height: 1.65;
+    }
+
+    .media-dots {
+      display: flex;
+      justify-content: center;
+      gap: .35rem;
+      margin-top: .8rem;
+    }
+
+    .media-dot {
+      width: 7px;
+      height: 7px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #cbd5e1;
+      cursor: pointer;
+    }
+
+    .media-dot.is-active {
+      background: var(--teal);
+    }
+
+    .personal-link-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: .45rem;
+      margin-top: .75rem;
+      padding: .5rem .75rem;
+      border: 1px solid var(--teal);
+      border-radius: 7px;
+      background: transparent;
+      color: var(--teal);
+      font-family: Arial, sans-serif;
+      font-size: .76rem;
+      font-weight: 700;
+      cursor: pointer;
+      transition: background .18s, color .18s, transform .18s;
+    }
+
+    .personal-link-btn:hover,
+    .personal-link-btn:focus-visible {
+      background: var(--teal);
+      color: #fff;
+      transform: translateY(-1px);
+      outline: none;
+    }
+
+    .personal-quote {
+      margin-top: .9rem;
+      padding-left: .9rem;
+      border-left: 2px solid rgba(255,255,255,.45);
+      color: rgba(255,255,255,.78);
+      font-size: .92rem;
+      font-style: italic;
+      line-height: 1.55;
     }
 
     /* ─────────────────────────────
@@ -492,13 +769,16 @@
         text-align: center;
       }
 
-      .name-row,
-      .hero-contact {
+      .name-row {
         justify-content: center;
       }
 
       .about-text {
         width: 100%;
+      }
+
+      .interest-grid {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -515,10 +795,24 @@
         padding: 3.5rem 0;
       }
 
-      .hero-contact a {
-        width: 100%;
-        justify-content: flex-start;
-        white-space: normal;
+      .nav-brand {
+        font-size: .78rem;
+      }
+
+      .nav-actions {
+        gap: .2rem;
+        margin-left: .55rem;
+      }
+
+      .nav-icon {
+        width: 27px;
+        height: 27px;
+        border-radius: 6px;
+      }
+
+      .nav-icon svg {
+        width: 15px;
+        height: 15px;
       }
     }
   </style>
@@ -529,6 +823,44 @@
   <!-- ════════════ TOP BAR ════════════ -->
   <nav>
     <span class="nav-brand">Khanh Duy Tran</span>
+
+    <div class="nav-actions" aria-label="Profile links">
+      <button class="nav-icon" type="button" id="open-cv" aria-label="View CV" title="CV">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM9 12h6v1.5H9V12zm0 3h6v1.5H9V15zm0 3h4.5v1.5H9V18z"/>
+        </svg>
+      </button>
+
+      <a class="nav-icon" href="mailto:khanh1234tg@gmail.com" aria-label="Email Khanh Duy Tran" title="Email">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M2 5h20v14H2V5zm2 2v.4l8 5.1 8-5.1V7H4zm16 10V9.8l-8 5.1-8-5.1V17h16z"/>
+        </svg>
+      </a>
+
+      <a class="nav-icon" href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile" title="Google Scholar">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 3 1.5 8.5 12 14l8-4.2V16h1.5V9L22.5 8.5 12 3zm-6 9.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8L12 15.3 6 12.2z"/>
+        </svg>
+      </a>
+
+      <a class="nav-icon" href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener" aria-label="ORCID profile" title="ORCID">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2.2A9.8 9.8 0 1 0 12 21.8 9.8 9.8 0 0 0 12 2.2zM8.2 7.1c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2S7 9 7 8.3s.5-1.2 1.2-1.2zM7.3 10.6h1.8v6.2H7.3v-6.2zm3.2 0h3c2.7 0 4.3 1.3 4.3 3.1 0 2-1.8 3.1-4.3 3.1h-3v-6.2zm1.8 1.5v3.2h1.1c1.5 0 2.5-.5 2.5-1.6 0-1-.9-1.6-2.5-1.6h-1.1z"/>
+        </svg>
+      </a>
+
+      <a class="nav-icon" href="https://github.com/AlexTran1703" target="_blank" rel="noopener" aria-label="GitHub profile" title="GitHub">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1.1A9.7 9.7 0 0 1 12 7c.9 0 1.8.1 2.7.4 2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.4.1 2.7.7.8 1.1 1.7 1.1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.7c0 .3.2.6.7.5A10.1 10.1 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/>
+        </svg>
+      </a>
+
+      <a class="nav-icon" href="https://www.linkedin.com/in/khanh-alex-tran/" target="_blank" rel="noopener" aria-label="LinkedIn profile" title="LinkedIn">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4.3 3.5A2.3 2.3 0 1 0 4.3 8a2.3 2.3 0 0 0 0-4.5zM2.4 9.7h3.8V21H2.4V9.7zm6.2 0h3.6v1.5h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7v6h-3.8v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H8.6V9.7z"/>
+        </svg>
+      </a>
+    </div>
   </nav>
 
   <!-- ════════════ ABOUT / RESEARCH ════════════ -->
@@ -547,90 +879,22 @@
         <div class="about-text">
           <div class="name-row">
             <h1>Khanh Duy Tran</h1>
-
-            <button class="cv-btn" type="button" id="open-cv">
-              <span class="button-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M6 2h9l5 5v15H6V2zm8 1.5V8h4.5L14 3.5zM9 12h6v1.5H9V12zm0 3h6v1.5H9V15zm0 3h4.5v1.5H9V18z"/>
-                </svg>
-              </span>
-              View CV
-            </button>
-          </div>
-
-          <div class="hero-contact">
-            <a href="mailto:khanh1234tg@gmail.com" aria-label="Email Khanh Duy Tran">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M2 5h20v14H2V5zm2 2v.4l8 5.1 8-5.1V7H4zm16 10V9.8l-8 5.1-8-5.1V17h16z"/>
-                </svg>
-              </span>
-              <span class="contact-label">Email</span>
-              <span>khanh1234tg@gmail.com</span>
-            </a>
-
-            <a href="https://scholar.google.com/citations?user=2hssLjQAAAAJ&hl=en" target="_blank" rel="noopener" aria-label="Google Scholar profile">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 3 1.5 8.5 12 14l8-4.2V16h1.5V9L22.5 8.5 12 3zm-6 9.2V16c0 1.7 2.7 3 6 3s6-1.3 6-3v-3.8L12 15.3 6 12.2z"/>
-                </svg>
-              </span>
-              <span class="contact-label">Scholar</span>
-              <span>Khanh Duy Tran</span>
-            </a>
-
-            <a href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener" aria-label="ORCID profile">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2.2A9.8 9.8 0 1 0 12 21.8 9.8 9.8 0 0 0 12 2.2zM8.2 7.1c.7 0 1.2.5 1.2 1.2s-.5 1.2-1.2 1.2S7 9 7 8.3s.5-1.2 1.2-1.2zM7.3 10.6h1.8v6.2H7.3v-6.2zm3.2 0h3c2.7 0 4.3 1.3 4.3 3.1 0 2-1.8 3.1-4.3 3.1h-3v-6.2zm1.8 1.5v3.2h1.1c1.5 0 2.5-.5 2.5-1.6 0-1-.9-1.6-2.5-1.6h-1.1z"/>
-                </svg>
-              </span>
-              <span class="contact-label">ORCID</span>
-              <span>0009-0006-5761-2683</span>
-            </a>
-
-            <a href="https://github.com/AlexTran1703" target="_blank" rel="noopener" aria-label="GitHub profile">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M12 2C6.5 2 2 6.6 2 12.2c0 4.5 2.9 8.3 6.8 9.7.5.1.7-.2.7-.5v-1.9c-2.8.6-3.4-1.2-3.4-1.2-.5-1.2-1.1-1.5-1.1-1.5-.9-.6.1-.6.1-.6 1 0 1.6 1.1 1.6 1.1.9 1.6 2.4 1.1 3 .8.1-.7.4-1.1.7-1.3-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1.1-2.8-.1-.3-.5-1.3.1-2.7 0 0 .9-.3 2.9 1.1A9.7 9.7 0 0 1 12 7c.9 0 1.8.1 2.7.4 2-1.4 2.9-1.1 2.9-1.1.6 1.4.2 2.4.1 2.7.7.8 1.1 1.7 1.1 2.8 0 3.9-2.4 4.7-4.6 5 .4.3.7 1 .7 1.9v2.7c0 .3.2.6.7.5A10.1 10.1 0 0 0 22 12.2C22 6.6 17.5 2 12 2z"/>
-                </svg>
-              </span>
-              <span class="contact-label">GitHub</span>
-              <span>@AlexTran1703</span>
-            </a>
-
-            <a href="https://www.linkedin.com/in/khanh-alex-tran/" target="_blank" rel="noopener" aria-label="LinkedIn profile">
-              <span class="contact-icon" aria-hidden="true">
-                <svg viewBox="0 0 24 24">
-                  <path d="M4.3 3.5A2.3 2.3 0 1 0 4.3 8a2.3 2.3 0 0 0 0-4.5zM2.4 9.7h3.8V21H2.4V9.7zm6.2 0h3.6v1.5h.1c.5-.9 1.7-1.9 3.5-1.9 3.8 0 4.5 2.5 4.5 5.7v6h-3.8v-5.3c0-1.3 0-3-1.8-3s-2.1 1.4-2.1 2.9V21H8.6V9.7z"/>
-                </svg>
-              </span>
-              <span class="contact-label">LinkedIn</span>
-              <span>khanh-alex-tran</span>
-            </a>
           </div>
 
           <p>
-            I am an M.Eng. student in Electrical Engineering and a Research Assistant working on
-            <strong>edge-enabled AI for wearable biomedical systems</strong>, with emphasis on technical feasibility
-            and cardiovascular monitoring outside conventional clinical settings.
+            I am an enthusiastic researcher interested in the <strong>technical feasibility of wearable biomedical platforms</strong>.
+            The question that keeps pulling me back is simple: does an engineered system sense reliably, and can what it measures
+            become directly meaningful for prospective clinical use?
           </p>
 
           <p>
-            My work spans <strong>wearable biomedical systems engineering</strong>, including hardware design,
-            physiological signal processing, embedded AI deployment, and cloud/system integration; and
-            <strong>reliability-aware clinical AI</strong>, including predictive uncertainty, selective prediction,
-            risk--coverage analysis, and identification of low-confidence diagnostic outputs.
+            I am not especially drawn to technology for its own sake. Outside research, I am more naturally an
+            <strong>art enthusiast</strong>, especially when it comes to music, along with books and stories that make me think.
           </p>
 
-          <button class="personal-letter-btn" type="button" id="open-letter">
-            <span class="button-icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24">
-                <path d="M12 21s-7.2-4.6-9.4-8.7C.8 9 .9 5.9 3.4 4.2c2.1-1.4 4.8-.8 6.4 1.1L12 7.8l2.2-2.5c1.6-1.9 4.3-2.5 6.4-1.1 2.5 1.7 2.6 4.8.8 8.1C19.2 16.4 12 21 12 21z"/>
-              </svg>
-            </span>
-            A Personal Note — Engagement Day
-          </button>
+          <blockquote class="personal-quote">
+            “The day I die is the day I am no longer able to hear the music.”
+          </blockquote>
         </div>
 
       </div>
@@ -640,9 +904,110 @@
   <!-- ════════════ PUBLICATIONS ════════════ -->
   <section id="publications">
     <div class="container">
-      <h2>Publications</h2>
+      <h2>Research Publications</h2>
       <div id="pub-list">
         <span class="status-msg">Loading publications…</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════════ BEYOND RESEARCH ════════════ -->
+  <section id="beyond-research">
+    <div class="container">
+      <h2>Beyond Research</h2>
+      <p class="beyond-intro">
+        A small collection of the people, books, stories, and music that matter to me outside research.
+      </p>
+
+      <div class="interest-grid">
+        <article class="interest-card">
+          <h3>My Love</h3>
+          <p>An engagement-day letter I wrote to my beloved wife.</p>
+          <button class="personal-link-btn" type="button" id="open-letter">
+            <span class="button-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24">
+                <path d="M12 21s-7.2-4.6-9.4-8.7C.8 9 .9 5.9 3.4 4.2c2.1-1.4 4.8-.8 6.4 1.1L12 7.8l2.2-2.5c1.6-1.9 4.3-2.5 6.4-1.1 2.5 1.7 2.6 4.8.8 8.1C19.2 16.4 12 21 12 21z"/>
+              </svg>
+            </span>
+            Read the Engagement Letter
+          </button>
+        </article>
+
+        <article class="interest-card books-slider" id="books-slider">
+          <div class="books-slider-head">
+            <h3>Books I Enjoyed</h3>
+            <div class="books-year-nav" aria-label="Book years">
+              <button class="books-arrow" type="button" id="books-prev" aria-label="Previous year">‹</button>
+              <span class="books-year" id="books-year" aria-live="polite">2026</span>
+              <button class="books-arrow" type="button" id="books-next" aria-label="Next year">›</button>
+            </div>
+          </div>
+
+          <div class="books-viewport" id="books-viewport">
+            <div class="books-track" id="books-track">
+              <div class="books-slide" data-year="2026">
+                <ul>
+                  <li><em>The Book of Why: The New Science of Cause and Effect</em> — Judea Pearl and Dana Mackenzie</li>
+                  <li><em>Animal Farm</em> — George Orwell</li>
+                  <li><em>How Not to Be Wrong: The Power of Mathematical Thinking</em> — Jordan Ellenberg</li>
+                </ul>
+              </div>
+
+              <div class="books-slide" data-year="2025">
+                <ul>
+                  <li><em>The Alchemist</em> — Paulo Coelho</li>
+                  <li><em>Surrounded by Idiots</em> — Thomas Erikson</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="books-dots" aria-label="Choose book year">
+            <button class="books-dot is-active" type="button" data-books-index="0" aria-label="Show books from 2026" aria-current="true"></button>
+            <button class="books-dot" type="button" data-books-index="1" aria-label="Show books from 2025"></button>
+          </div>
+        </article>
+
+        <article class="interest-card media-slider" id="media-slider">
+          <div class="media-slider-head">
+            <h3>Stories I Carry</h3>
+            <div class="media-count-nav" aria-label="Stories I enjoy">
+              <button class="media-arrow" type="button" id="media-prev" aria-label="Previous story">‹</button>
+              <span class="media-count" id="media-count" aria-live="polite">1 / 3</span>
+              <button class="media-arrow" type="button" id="media-next" aria-label="Next story">›</button>
+            </div>
+          </div>
+
+          <div class="media-viewport" id="media-viewport">
+            <div class="media-track" id="media-track">
+              <div class="media-slide" data-media-label="Orb: On the Movements of the Earth">
+                <p class="media-title"><em>Orb: On the Movements of the Earth</em> — Uoto</p>
+                <p class="media-note">Human knowledge endures across generations. We pursue it fearlessly through hope and doubt, leaving traces for those who come after us.</p>
+              </div>
+
+              <div class="media-slide" data-media-label="Fullmetal Alchemist: Brotherhood">
+                <p class="media-title"><em>Fullmetal Alchemist: Brotherhood</em> — based on the manga by Hiromu Arakawa</p>
+                <p class="media-note">Equivalent exchange: we cannot gain anything meaningful without sacrificing something dear to our hearts.</p>
+              </div>
+
+              <div class="media-slide" data-media-label="20th Century Boys">
+                <p class="media-title"><em>20th Century Boys</em> — Naoki Urasawa</p>
+                <p class="media-note">Sincerity, loyalty, responsibility, and moral conviction can outweigh spectacle, manipulation, and hollow symbols of power.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="media-dots" aria-label="Choose a story">
+            <button class="media-dot is-active" type="button" data-media-index="0" aria-label="Show Orb: On the Movements of the Earth" aria-current="true"></button>
+            <button class="media-dot" type="button" data-media-index="1" aria-label="Show Fullmetal Alchemist: Brotherhood"></button>
+            <button class="media-dot" type="button" data-media-index="2" aria-label="Show 20th Century Boys"></button>
+          </div>
+        </article>
+
+        <article class="interest-card">
+          <h3>An Album I Keep Returning To</h3>
+          <p><em>Shadows Collide with People</em> — John Frusciante</p>
+        </article>
       </div>
     </div>
   </section>
@@ -861,6 +1226,96 @@
             '<a href="https://orcid.org/0009-0006-5761-2683" target="_blank" rel="noopener">View on ORCID</a>.</span>';
         }
       }
+
+      /* ───────────── Books-by-year slider ───────────── */
+      const booksTrack = document.getElementById('books-track');
+      const booksYear = document.getElementById('books-year');
+      const booksPrev = document.getElementById('books-prev');
+      const booksNext = document.getElementById('books-next');
+      const booksViewport = document.getElementById('books-viewport');
+      const bookSlides = Array.from(document.querySelectorAll('.books-slide'));
+      const bookDots = Array.from(document.querySelectorAll('.books-dot'));
+      let booksIndex = 0; // 2026 is intentionally the default visible slide.
+
+      function showBooksSlide(index) {
+        booksIndex = (index + bookSlides.length) % bookSlides.length;
+        booksTrack.style.transform = `translateX(-${booksIndex * 50}%)`;
+        booksYear.textContent = bookSlides[booksIndex].dataset.year;
+
+        bookDots.forEach((dot, i) => {
+          const active = i === booksIndex;
+          dot.classList.toggle('is-active', active);
+          if (active) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+      }
+
+      booksPrev.addEventListener('click', () => showBooksSlide(booksIndex - 1));
+      booksNext.addEventListener('click', () => showBooksSlide(booksIndex + 1));
+      bookDots.forEach(dot => {
+        dot.addEventListener('click', () => showBooksSlide(Number(dot.dataset.booksIndex)));
+      });
+
+      let booksTouchStartX = null;
+      booksViewport.addEventListener('touchstart', event => {
+        booksTouchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+
+      booksViewport.addEventListener('touchend', event => {
+        if (booksTouchStartX === null) return;
+        const delta = event.changedTouches[0].clientX - booksTouchStartX;
+        if (Math.abs(delta) > 45) {
+          showBooksSlide(booksIndex + (delta < 0 ? 1 : -1));
+        }
+        booksTouchStartX = null;
+      }, { passive: true });
+
+      showBooksSlide(0);
+
+      /* ───────────── Shows/comics meaning slider ───────────── */
+      const mediaTrack = document.getElementById('media-track');
+      const mediaCount = document.getElementById('media-count');
+      const mediaPrev = document.getElementById('media-prev');
+      const mediaNext = document.getElementById('media-next');
+      const mediaViewport = document.getElementById('media-viewport');
+      const mediaSlides = Array.from(document.querySelectorAll('.media-slide'));
+      const mediaDots = Array.from(document.querySelectorAll('.media-dot'));
+      let mediaIndex = 0;
+
+      function showMediaSlide(index) {
+        mediaIndex = (index + mediaSlides.length) % mediaSlides.length;
+        mediaTrack.style.transform = `translateX(-${mediaIndex * (100 / mediaSlides.length)}%)`;
+        mediaCount.textContent = `${mediaIndex + 1} / ${mediaSlides.length}`;
+
+        mediaDots.forEach((dot, i) => {
+          const active = i === mediaIndex;
+          dot.classList.toggle('is-active', active);
+          if (active) dot.setAttribute('aria-current', 'true');
+          else dot.removeAttribute('aria-current');
+        });
+      }
+
+      mediaPrev.addEventListener('click', () => showMediaSlide(mediaIndex - 1));
+      mediaNext.addEventListener('click', () => showMediaSlide(mediaIndex + 1));
+      mediaDots.forEach(dot => {
+        dot.addEventListener('click', () => showMediaSlide(Number(dot.dataset.mediaIndex)));
+      });
+
+      let mediaTouchStartX = null;
+      mediaViewport.addEventListener('touchstart', event => {
+        mediaTouchStartX = event.changedTouches[0].clientX;
+      }, { passive: true });
+
+      mediaViewport.addEventListener('touchend', event => {
+        if (mediaTouchStartX === null) return;
+        const delta = event.changedTouches[0].clientX - mediaTouchStartX;
+        if (Math.abs(delta) > 45) {
+          showMediaSlide(mediaIndex + (delta < 0 ? 1 : -1));
+        }
+        mediaTouchStartX = null;
+      }, { passive: true });
+
+      showMediaSlide(0);
 
       /* ───────────── CV modal ───────────── */
       const cvModal = document.getElementById('cv-modal');
